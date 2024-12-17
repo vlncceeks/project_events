@@ -1,1 +1,10 @@
-
+:root {
+    --text: #333333;
+    --accent: #6FCF97;
+    --background: #F8F9FA;
+    --gray: #E6E7E8;
+    font-size: 62.5%;
+}
+.search__input {
+    background-color: var(--gray);
+}
