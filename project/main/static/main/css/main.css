@@ -1,149 +1,154 @@
 :root {
-    --text: #333333;
-    --accent: #6FCF97;
-    --background: #F8F9FA;
-    --gray: #E6E7E8;
-    --accent-hover: #9DD6C2;
-    --accent-active: #27A369;
-    font-size: 62.5%;
+  --text: #333333;
+  --accent: #6fcf97;
+  --background: #f8f9fa;
+  --gray: #e6e7e8;
+  --accent-hover: #9dd6c2;
+  --accent-active: #27a369;
+  font-size: 62.5%;
 }
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 *::selection {
-    background-color: var(--accent);
-    color: var(--background);
+  background-color: var(--accent);
+  color: var(--background);
 }
 body {
-    background-color: var(--background);
+  background-color: var(--background);
 }
 .wrapper {
-    margin: 8rem 14.2rem;
+  margin: 8rem 14.2rem;
 }
 .container {
-    display: flex;
-    gap: 4rem;
-    justify-content: flex-end;
-    margin: 0 0 4.5rem 0;
-    position: relative;
+  display: flex;
+  gap: 4rem;
+  justify-content: flex-end;
+  margin: 0 0 4.5rem 0;
+  position: relative;
 }
 .search {
-    background-color: var(--gray);
-    border-radius: 2rem;
-    padding: 1rem 3rem;
-    width: 100%;
-    max-width: 55rem;
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    right: 50%;
-    transform: translateX(50%);
+  background-color: var(--gray);
+  border-radius: 2rem;
+  padding: 1rem 3rem;
+  width: 100%;
+  max-width: 55rem;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  margin-bottom: 40px;
 }
 .search__input {
-    background-color: var(--gray);
-    border: 0;
-    font-family: 'Trebuchet MS', Helvetica, sans-serif;
-    letter-spacing: .05em;
-    color: var(--text);
-    padding: 0;
-    min-width: 20rem;
-    font-size: 1.6rem;
-    outline: none;
+  background-color: var(--gray);
+  border: 0;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  padding: 0;
+  min-width: 20rem;
+  font-size: 1.6rem;
+  outline: none;
 }
 .search__input:focus {
-    border: 0;
+  border: 0;
 }
 .search__svg {
-    width: 3rem;
-    height: 3rem;
+  width: 3rem;
+  height: 3rem;
 }
-.button_of_entry, .sign_button {
-    background-color: var(--accent);
-    border: 0;
-    border-radius: 1rem;
-    padding: 1rem;
-    color: var(--text);
-    font-family: 'Trebuchet MS', Helvetica, sans-serif;
-    font-size: 2.4rem;
-    letter-spacing: .05em;
-    min-height: 5rem;
-    transition: 0.3s;
+.button_of_entry,
+.sign_button {
+  background-color: var(--accent);
+  border: 0;
+  border-radius: 1rem;
+  padding: 1rem;
+  color: var(--text);
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 2.4rem;
+  letter-spacing: 0.05em;
+  min-height: 5rem;
+  transition: 0.3s;
 }
 button:hover {
-    background-color: var(--accent-hover);
+  background-color: var(--accent-hover);
 }
 button:active {
-    background-color: var(--accent-active);
-    color: var(--gray);
+  background-color: var(--accent-active);
+  color: var(--gray);
 }
 .activity {
-    margin: 4.5rem auto ;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+  margin: 4.5rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 .event {
-    background-color: var(--gray);
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    border-radius: 2rem;
+  background-color: var(--gray);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-radius: 2rem;
 }
 .content {
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
 }
 summary {
-    display: flex;
-    position: relative;
-    justify-content: space-between;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
 }
 details summary {
-    list-style: none;
-    appearance: none;
-    outline: none;
-    cursor: pointer;
-    margin: 0 0 3rem 0;
+  list-style: none;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  margin: 0 0 3rem 0;
 }
 details summary::-webkit-details-marker {
-    display: none;
+  display: none;
 }
 summary::after {
-    display: inline-block;
-    content: url("marker.svg");
-    width: 3.2rem;
-    height: 1.7rem;
-    transition: 0.3s;
+  display: inline-block;
+  content: url("marker.svg");
+  width: 3.2rem;
+  height: 1.7rem;
+  transition: 0.3s;
 }
 details[open] > summary::after {
-    transform: rotate(180deg);
-    width: 3.2rem;
-    height: 1.7rem;
+  transform: rotate(180deg);
+  width: 3.2rem;
+  height: 1.7rem;
 }
-summary, details p {
-    font-size: 3rem;
-    color: var(--text);
-    font-family: 'Trebuchet MS', Helvetica, sans-serif;
-    letter-spacing: .05em;
+summary,
+details p {
+  font-size: 3rem;
+  color: var(--text);
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  letter-spacing: 0.05em;
 }
 details p {
-    margin: 1.5rem 0 ;
-    font-size: 1.6rem;
+  margin: 1.5rem 0;
+  font-size: 1.6rem;
 }
 .details__materials {
-    margin: 0 0 3rem 0;
+  margin: 0 0 3rem 0;
 }
-.content__authors, .content__date_and_time, .content__numbers_of_seats {
-    margin: 1.5rem 0 0 0;
-    color: var(--text);
-    font-family: 'Trebuchet MS', Helvetica, sans-serif;
-    font-size: 2rem;
+.content__authors,
+.content__date_and_time,
+.content__numbers_of_seats {
+  margin: 1.5rem 0 0 0;
+  color: var(--text);
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 2rem;
 }
 .content__authors {
-    margin: 0 ;
+  margin: 0;
 }
 .sign_button {
-    padding: 1.3rem 2.7rem;
-    align-self: center;
+  padding: 1.3rem 2.7rem;
+  align-self: center;
 }
