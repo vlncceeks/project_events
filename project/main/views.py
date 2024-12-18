@@ -1,10 +1,19 @@
 from django.shortcuts import render
-from django.http import JsonResponse
-from .models import Events
 
-def events_list(request):
-    events = Events.objects.all().values('id', 'title', 'author', 'description', 'materials', 'photo', 'date_time', 'places')
-    return JsonResponse(list(events), safe=False)
+
+from rest_framework.generics import ListAPIView
+from .models import Events
+from .serializers import EventSerializer
+from rest_framework import filters
+
+class EventListView(ListAPIView):
+    queryset = Events.objects.all()
+    serializer_class = EventSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['title']  # Поле, по которому будет происходить поиск
+
+
 
 def index(request):
     return render(request, "main/index.html")
+
