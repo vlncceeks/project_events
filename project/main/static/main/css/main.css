@@ -70,7 +70,10 @@ body {
   letter-spacing: 0.05em;
   min-height: 5rem;
   transition: 0.3s;
+  text-decoration: none;
+  display: block;
 }
+
 button:hover {
   background-color: var(--accent-hover);
 }

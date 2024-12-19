@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Events  # Убедитесь, что модель Event существует
+from .models import Events  
 
 class EventSerializer(serializers.ModelSerializer):
     class Meta:
