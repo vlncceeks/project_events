@@ -50,6 +50,11 @@ body {
   min-width: 20rem;
   font-size: 1.6rem;
   outline: none;
+  align-self: ;
+}
+.search__form {
+  display: flex;
+  justify-content: center;
 }
 .search__input:focus {
   border: 0;
