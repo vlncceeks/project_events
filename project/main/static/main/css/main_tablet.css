@@ -1,0 +1,62 @@
+@media (min-width: 1050px){
+    .wrapper {
+        margin: 8rem 14.2rem;
+    }
+    .container {
+        gap: 4rem;
+        justify-content: flex-end;
+        margin: 0 0 4.5rem 0;
+    }
+    .search {
+        background-color: var(--gray);
+        border-radius: 2rem;
+        padding: 1rem 3rem;
+        width: 100%;
+        max-width: 55rem;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        right: 50%;
+        transform: translateX(50%);
+        margin-bottom: 40px;
+    }  
+    .search__form {
+        display: flex;
+        justify-content: center;
+    }
+    .search__svg {
+        width: 3rem;
+        height: 3rem;
+    }
+    .button_of_entry,
+    .sign_button {
+        padding: 1rem;
+        font-size: 2.4rem;
+        min-height: 5rem;
+    }
+    .activity {
+        margin: 4.5rem auto;
+        gap: 3rem;
+    }
+    .event__container_image {
+        height: 40rem;
+    }
+    .content {
+        padding: 3rem;
+    }
+    details summary {
+        margin: 0 0 3rem 0;
+    }
+    summary::after {
+        width: 3.2rem;
+        height: 1.7rem;
+    }
+    summary,
+    details p {
+        font-size: 3rem;
+    }
+    details p {
+        margin: 1.5rem 0;
+        font-size: 1.6rem;
+    }
+}

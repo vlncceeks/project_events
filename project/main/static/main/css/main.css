@@ -14,31 +14,28 @@
   background-color: var(--accent);
   color: var(--background);
 }
-body {
+body, main {
   background-color: var(--background);
+  margin: 0;
+  width: 100%;
 }
 .wrapper {
-  margin: 8rem 14.2rem;
+  margin: 3rem 1.5rem;
 }
 .container {
   display: flex;
-  gap: 4rem;
-  justify-content: flex-end;
-  margin: 0 0 4.5rem 0;
+  gap: 2rem;
+  margin: 0 0 3rem 0;
   position: relative;
 }
 .search {
   background-color: var(--gray);
-  border-radius: 2rem;
-  padding: 1rem 3rem;
+  border-radius: 1.5rem;
+  padding: 1rem 1.5rem;
   width: 100%;
   max-width: 55rem;
   display: flex;
   justify-content: space-between;
-  position: absolute;
-  right: 50%;
-  transform: translateX(50%);
-  margin-bottom: 40px;
 }
 .search__input {
   background-color: var(--gray);
@@ -47,33 +44,33 @@ body {
   letter-spacing: 0.05em;
   color: var(--text);
   padding: 0;
-  min-width: 20rem;
+  min-width: 12rem;
+  width: 100%;
   font-size: 1.6rem;
   outline: none;
-  align-self: ;
 }
 .search__form {
-  display: flex;
-  justify-content: center;
+  display: inline-block;
+  line-height: 100%;
+  padding: 0.1rem 0 0 0;
 }
 .search__input:focus {
   border: 0;
 }
 .search__svg {
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
 }
 .button_of_entry,
 .sign_button {
   background-color: var(--accent);
   border: 0;
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 0.9rem 0.8rem;
   color: var(--text);
   font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-size: 2.4rem;
+  font-size: 2rem;
   letter-spacing: 0.05em;
-  min-height: 5rem;
   transition: 0.3s;
   text-decoration: none;
   display: block;
@@ -87,10 +84,10 @@ button:active {
   color: var(--gray);
 }
 .activity {
-  margin: 4.5rem auto;
+  margin: 3rem auto;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
 }
 .event {
   background-color: var(--gray);
@@ -100,7 +97,7 @@ button:active {
   border-radius: 2rem;
 }
 .event__container_image {
-  height: 40rem;
+  height: 23rem;
 }
 .event__image {
   object-fit: cover;
@@ -109,7 +106,7 @@ button:active {
   border-radius: 2rem 2rem 0 0;
 }
 .content {
-  padding: 3rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
 }
@@ -123,7 +120,7 @@ details summary {
   appearance: none;
   outline: none;
   cursor: pointer;
-  margin: 0 0 3rem 0;
+  margin: 0 0 2rem 0;
 }
 details summary::-webkit-details-marker {
   display: none;
@@ -131,8 +128,8 @@ details summary::-webkit-details-marker {
 summary::after {
   display: inline-block;
   content: url("marker.svg");
-  width: 3.2rem;
-  height: 1.7rem;
+  width: 1.8rem;
+  height: 0.9rem;
   transition: 0.3s;
 }
 details[open] > summary::after {
@@ -142,14 +139,14 @@ details[open] > summary::after {
 }
 summary,
 details p {
-  font-size: 3rem;
+  font-size: 1.6rem;
   color: var(--text);
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   letter-spacing: 0.05em;
 }
 details p {
-  margin: 1.5rem 0;
-  font-size: 1.6rem;
+  margin: 1rem 0;
+  font-size: 1.2rem;
 }
 .details__materials {
   margin: 0 0 3rem 0;
