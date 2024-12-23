@@ -20,7 +20,14 @@ body, main {
   width: 100%;
 }
 .wrapper {
-  margin: 3rem 1.5rem;
+  margin: 0 auto;
+  max-width: 60rem;
+  padding: 3rem 1.5rem;
+}
+@media (min-width: 550px) {
+  .wrapper {
+    padding: 5rem 3rem;
+  }
 }
 .container {
   display: flex;
@@ -33,7 +40,6 @@ body, main {
   border-radius: 1.5rem;
   padding: 1rem 1.5rem;
   width: 100%;
-  max-width: 55rem;
   display: flex;
   justify-content: space-between;
 }
@@ -120,22 +126,29 @@ details summary {
   appearance: none;
   outline: none;
   cursor: pointer;
-  margin: 0 0 2rem 0;
+  margin: 0 3rem 2rem 0;
+  position: relative;
 }
 details summary::-webkit-details-marker {
   display: none;
 }
 summary::after {
-  display: inline-block;
-  content: url("marker.svg");
+  content: '';
+  position: absolute;
+  top: 0.5rem;
+  right: -3rem;
+  margin: 0;
+  display: block;
+  background: url("marker.svg") no-repeat center;
+  background-size: 100% 100%;
   width: 1.8rem;
-  height: 0.9rem;
+  height: 1.5rem;
   transition: 0.3s;
 }
 details[open] > summary::after {
   transform: rotate(180deg);
-  width: 3.2rem;
-  height: 1.7rem;
+  width: 1.8rem;
+  height: 1.5rem;
 }
 summary,
 details p {
@@ -154,10 +167,10 @@ details p {
 .content__authors,
 .content__date_and_time,
 .content__numbers_of_seats {
-  margin: 1.5rem 0 0 0;
+  margin: 1rem 0 0 0;
   color: var(--text);
   font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 .content__authors {
   margin: 0;
