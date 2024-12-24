@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,25 +8,71 @@
       rel="stylesheet"
       href="{% static 'users_registration/css/users.css' %}"
     />
-    <title>Document</title>
+    <title>Регистрация</title>
   </head>
   <body>
     <header></header>
     <main>
-        <section class="registration">
-            <div class="registration__wrapper">
-                <h1 class="registration__title">Регистрация</h1>
-                <form class="registration__input input" method="POST">
-                    <input class="input__login" placeholder="Логин" required>
-                    <input class="input__password" placeholder="Пароль" required>
-                    <button type="submit" class="registraion__create_acc">Создать аккаунт</button>
-                </form>
-                <div class="registration__link_to_entry entry">
-                    <p class="entry__text">Есть аккуант?</p>
-                    <button class="entry__button">Войти</button>
-                </div>
-            </div>
-        </section>
+      <section class="registration">
+        <div class="registration__wrapper">
+          <h1 class="registration__title">Регистрация</h1>
+          <form method="POST">
+            {% csrf_token %}
+
+            <!-- Логин -->
+            {{ form.login.errors }}
+            <input
+              type="text"
+              name="login"
+              class="input__login"
+              placeholder="Логин"
+              required
+              value="{{ form.login.value|default:'' }}"
+            />
+
+            <!-- Email -->
+            {{ form.email.errors }}
+            <input
+              type="email"
+              name="email"
+              class="input__email"
+              placeholder="Email"
+              required
+              value="{{ form.email.value|default:'' }}"
+            />
+
+            <!-- Пароль -->
+            {{ form.password.errors }}
+            <input
+              type="password"
+              name="password"
+              class="input__password"
+              placeholder="Пароль"
+              required
+            />
+
+            <!-- Подтверждение пароля -->
+            {{ form.password2.errors }}
+            <input
+              type="password"
+              name="password2"
+              class="input__password"
+              placeholder="Повторите пароль"
+              required
+            />
+
+            <button type="submit" class="registraion__create_acc">
+              Создать аккаунт
+            </button>
+          </form>
+
+          <div class="registration__link_to_entry entry">
+            <p class="entry__text">Есть аккаунт?</p>
+            <a href="{% url 'register' %}" class="entry__button">Войти</a>
+            <!-- Здесь правильная ссылка на страницу входа -->
+          </div>
+        </div>
+      </section>
     </main>
     <footer></footer>
   </body>
