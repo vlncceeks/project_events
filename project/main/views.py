@@ -1,7 +1,5 @@
 from django.shortcuts import render
 
-from django.contrib.auth import authenticate, login as user_login, logout as user_logout
-from django.http import HttpResponseRedirect
 
 from rest_framework.generics import ListAPIView
 from .models import Events
@@ -18,19 +16,33 @@ class EventListView(ListAPIView):
 
 def index(request):
     return render(request, "main/index.html")
-#------------------------------
-def login_view(request):
-    if request.method == 'POST':
-        login = request.POST.get('login')
-        password = request.POST.get('password')
-        
-        usr = authenticate(request, username=login, password=password)
-        if usr is not None:
-            user_login(request, usr)
-            return HttpResponseRedirect('/')
-        else:
-            return render(request, template_name='auth/registration.html')
 
-    return render(request, template_name='auth/registration.html')
+from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
+from .models import EventParticipant, Events
 
-#--------------------
+@login_required
+def register_for_event(request, event_id):
+    event = Events.objects.get(id=event_id)
+
+    # Проверяем, доступно ли место
+    if event.total_seats > 0:
+        # Проверяем, не записан ли пользователь уже на это мероприятие
+        if EventParticipant.objects.filter(user=request.user, event=event).exists():
+            return JsonResponse({"error": "Вы уже записаны на это мероприятие"}, status=400)
+
+        # Записываем пользователя
+        EventParticipant.objects.create(user=request.user, event=event)
+
+        # Уменьшаем количество доступных мест в базе данных
+        event.available_seats -= 1
+        event.save()
+
+        # Возвращаем обновленные данные о количестве мест
+        return JsonResponse({
+            "message": "Вы успешно записаны на мероприятие!",
+            "available_seats": event.available_seats
+        })
+
+    else:
+        return JsonResponse({"error": "Нет доступных мест"}, status=400)

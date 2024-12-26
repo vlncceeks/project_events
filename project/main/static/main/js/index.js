@@ -22,41 +22,86 @@ async function getEvents(url) {
 }
 
 // Функция для отображения всех событий
+// Функция для отображения всех событий
 function showEvent(data) {
   data.forEach((event) => {
     const eventElement = document.createElement("div");
 
     eventElement.classList.add("activity__event", "event");
 
-    eventElement.innerHTML = `        
+    eventElement.innerHTML = `
       <div class="event__container_image">
         <img src="${event.photo}" alt="event" class="event__image">
       </div>
       <div class="events__content content">
         <details class="content__details details">
           <summary class="details__title">${event.title}</summary>
-          <p class="details__description">___________________________</p>
-          <p class="details__materials_title">${event.materials
-            .replace('"', "")
-            .replace('"', "")}</p>
-          <p class="details__materials">___________________________</p>
+          <p class="details__description">${event.description}</p>
+          <p class="details__materials_title"></p>
+          <p class="details__materials">${event.materials}</p>
         </details>
-        <p class="content__authors">___________________________</p>
+        <p class="content__authors">${event.author}</p>
         <p class="content__date_and_time">${event.date_time
           .replace("T", " ")
           .replace("Z", " ")
           .replace("-", ".")
           .replace("-", ".")}</p>
         <p class="content__numbers_of_seats">Количество мест: ${
-          event.places
+          event.available_seats
         }</p>
-        <button class="content__sign_button sign_button">
+        <button class="content__sign_button sign_button" data-event-id="${
+          event.id
+        }">
           Записаться
         </button>
       </div>
     `;
+
+    const signButton = eventElement.querySelector(".content__sign_button");
+    signButton.addEventListener("click", async (e) => {
+      const eventId = e.target.getAttribute("data-event-id");
+
+      // Отправка запроса на регистрацию
+      const response = await fetch(`/api/register_event/${eventId}/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRFToken": getCookie("csrftoken"), // Используйте CSRF-токен, если нужно
+        },
+      });
+      const result = await response.json();
+
+      if (response.ok) {
+        alert(result.message);
+        // Обновляем количество доступных мест на странице
+        e.target
+          .closest(".event")
+          .querySelector(
+            ".content__numbers_of_seats"
+          ).textContent = `Количество мест: ${result.available_seats}`;
+      } else {
+        alert(result.error);
+      }
+    });
+
     wrapper.appendChild(eventElement);
   });
+}
+
+// Функция для получения CSRF токена
+function getCookie(name) {
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== "") {
+    const cookies = document.cookie.split(";");
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.substring(0, name.length + 1) === name + "=") {
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+        break;
+      }
+    }
+  }
+  return cookieValue;
 }
 
 // Обработчик отправки формы

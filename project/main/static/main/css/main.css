@@ -14,7 +14,8 @@
   background-color: var(--accent);
   color: var(--background);
 }
-body, main {
+body,
+main {
   background-color: var(--background);
   margin: 0;
   width: 100%;
@@ -29,6 +30,7 @@ body, main {
     padding: 5rem 3rem;
   }
 }
+
 .container {
   display: flex;
   gap: 2rem;
@@ -133,7 +135,7 @@ details summary::-webkit-details-marker {
   display: none;
 }
 summary::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0.5rem;
   right: -3rem;

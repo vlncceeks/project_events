@@ -16,50 +16,21 @@
       <section class="registration">
         <div class="registration__wrapper">
           <h1 class="registration__title">Регистрация</h1>
-          <form method="POST">
+          <form action="{%url 'users:register'%}" method="post">
             {% csrf_token %}
 
             <!-- Логин -->
-            {{ form.login.errors }}
-            <input
-              type="text"
-              name="login"
-              class="input__login"
-              placeholder="Логин"
-              required
-              value="{{ form.login.value|default:'' }}"
-            />
+
+            {{form.username}}
 
             <!-- Email -->
-            {{ form.email.errors }}
-            <input
-              type="email"
-              name="email"
-              class="input__email"
-              placeholder="Email"
-              required
-              value="{{ form.email.value|default:'' }}"
-            />
+            {{form.email}}
 
             <!-- Пароль -->
-            {{ form.password.errors }}
-            <input
-              type="password"
-              name="password"
-              class="input__password"
-              placeholder="Пароль"
-              required
-            />
+            {{form.password1}}
 
             <!-- Подтверждение пароля -->
-            {{ form.password2.errors }}
-            <input
-              type="password"
-              name="password2"
-              class="input__password"
-              placeholder="Повторите пароль"
-              required
-            />
+            {{form.password2}}
 
             <button type="submit" class="registraion__create_acc">
               Создать аккаунт
@@ -68,7 +39,7 @@
 
           <div class="registration__link_to_entry entry">
             <p class="entry__text">Есть аккаунт?</p>
-            <a href="{% url 'register' %}" class="entry__button">Войти</a>
+            <a href="{% url 'users:login' %}" class="entry__button">Войти</a>
             <!-- Здесь правильная ссылка на страницу входа -->
           </div>
         </div>

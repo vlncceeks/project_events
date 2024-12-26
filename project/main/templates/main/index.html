@@ -32,12 +32,26 @@
             </svg>
           </div>
           <div class="container__entry entry">
+            {% if user.is_authenticated %}
+            <span class="entry__username" style="font-size: 26px"
+              >{{ user.username }}</span
+            >
+            <form action="{% url 'logout' %}" method="POST">
+              {% csrf_token %}
+              <button
+                type="submit"
+                class="entry__button_of_entry button_of_entry"
+              >
+                Выйти
+              </button>
+            </form>
+            {% else %}
             <a
               class="entry__button_of_entry button_of_entry"
-              href="/users/register/"
+              href="{% url 'register' %}"
+              >Войти</a
             >
-              Войти
-            </a>
+            {% endif %}
           </div>
         </div>
         <div class="wrapper__activity activity"></div>
