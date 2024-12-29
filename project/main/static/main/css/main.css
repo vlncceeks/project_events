@@ -24,6 +24,7 @@ main {
   margin: 0 auto;
   max-width: 60rem;
   padding: 3rem 1.5rem;
+  width: 100%;
 }
 @media (min-width: 550px) {
   .wrapper {
@@ -68,6 +69,20 @@ main {
 .search__svg {
   width: 2rem;
   height: 2rem;
+}
+.container__entry {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  gap: 1rem;
+}
+.entry__username {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--text);
+  align-self: center;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 .button_of_entry,
 .sign_button {

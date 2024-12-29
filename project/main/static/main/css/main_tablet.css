@@ -39,6 +39,9 @@
         font-size: 2rem;
         min-height: 5rem;
     }
+    .sign_button {
+        padding: 1.3rem 2.7rem;
+    }
     .activity {
         margin: 4.5rem auto;
         gap: 3rem;
