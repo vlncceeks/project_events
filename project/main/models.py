@@ -2,10 +2,10 @@ from django.db import models
 
 class Events(models.Model):
     title = models.CharField('Название', max_length=250)
-    author = models.CharField('автор', max_length=250)
-    description = models.TextField('Описание')
-    materials = models.TextField('Материлы')
-    photo = models.ImageField(upload_to='images/')
+    author = models.CharField('автор', max_length=250, blank=True, null=True)
+    description = models.TextField('Описание', blank=True, null=True)
+    materials = models.TextField('Материлы', blank=True, null=True)
+    photo = models.ImageField(upload_to='images/', blank=True, null=True)
     date_time = models.DateTimeField('Дата мероприятия')
     places = models.IntegerField('Всего мест')
     total_seats = models.PositiveIntegerField('свободные места', default=0)

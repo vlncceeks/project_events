@@ -31,7 +31,7 @@ function showEvent(data) {
 
     eventElement.innerHTML = `
       <div class="event__container_image">
-        <img src="${event.photo}" alt="event" class="event__image">
+        <img src="${event.photo}" alt="event" class="event__image" id="image">
       </div>
       <div class="events__content content">
         <details class="content__details details">
