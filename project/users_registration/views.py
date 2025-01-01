@@ -30,30 +30,7 @@ from django.shortcuts import render, HttpResponsePermanentRedirect
 from users_registration.forms import UserLoginForm, UserRegistrationForm
 from django.contrib import auth  
 from django.urls import reverse
-# , redirect
-# from django.contrib import messages
-# from .forms import UserForm  # Импортируем форму регистрации
-# from .models import Users  # Импортируем модель пользователей
 
-# def register(request):
-#     if request.method == 'POST':
-#         form = UserForm(request.POST)
-        
-#         # Если форма валидна, сохраняем данные
-#         if form.is_valid():
-#             # Сохраняем данные в базе данных
-#             user = form.save(commit=False)
-#             # Дополнительно можно обработать данные перед сохранением, например:
-#             # user.password = hash_password(user.password)  # Если нужно, например, хэшировать пароль
-#             user.save()
-#             messages.success(request, "Вы успешно зарегистрированы!")
-#             return redirect('/')  # Перенаправляем на главную страницу после успешной регистрации
-#         else:
-#             messages.error(request, "Ошибка в форме. Пожалуйста, исправьте её.")
-#     else:
-#         form = UserForm()
-
-#     return render(request, 'users_registration/registration.html', {'form': form})
 
 def index(request):
     return render(request, "main/index.html")

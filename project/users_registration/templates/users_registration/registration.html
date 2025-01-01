@@ -21,17 +21,21 @@
 
             <!-- Логин -->
 
-            {{form.username}}
-
+            {{form.username}} {% for error in form.username.errors %}
+            <div class="error">{{ error }}</div>
+            {% endfor %}
             <!-- Email -->
-            {{form.email}}
-
+            {{form.email}} {% for error in form.email.errors %}
+            <div class="error">{{ error }}</div>
+            {% endfor %}
             <!-- Пароль -->
-            {{form.password1}}
-
+            {{form.password1}} {% for error in form.password1.errors %}
+            <div class="error">{{ error }}</div>
+            {% endfor %}
             <!-- Подтверждение пароля -->
-            {{form.password2}}
-
+            {{form.password2}} {% for error in form.password2.errors %}
+            <div class="error">{{ error }}</div>
+            {% endfor %}
             <button type="submit" class="registraion__create_acc">
               Создать аккаунт
             </button>
