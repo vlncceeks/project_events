@@ -33,8 +33,7 @@
           </div>
           <div class="container__entry entry">
             {% if user.is_authenticated %}
-            <span class="entry__username" style="font-size: 26px"
-              >{{ user.username }}</span
+            <span class="entry__username">{{ user.username }}</span
             >
             <form action="{% url 'logout' %}" method="POST">
               {% csrf_token %}
