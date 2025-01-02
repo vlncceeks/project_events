@@ -1,0 +1,176 @@
+[33mcommit 979ab7370608d2f4ae09dc569e5677bbbc92712e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Kirill <kurumi8927@gmail.com>
+Date:   Wed Jan 1 23:02:36 2025 +0300
+
+    ?
+
+[33mcommit 2d06b6fa13508dc0d0a0f46f9586b00060a36530[m
+Author: Kirill <kurumi8927@gmail.com>
+Date:   Wed Jan 1 22:58:26 2025 +0300
+
+    Add new migration 0004
+
+[33mcommit dd1a747a0a7ead27ef0c4d6f97dd04b2f1d7a45b[m
+Author: Kirill <kurumi8927@gmail.com>
+Date:   Wed Jan 1 22:56:02 2025 +0300
+
+    Add db.sqlite3
+
+[33mcommit dbee235528457d989ce419beb3e75cda7578aa19[m
+Author: Kirill <kurumi8927@gmail.com>
+Date:   Wed Jan 1 22:54:34 2025 +0300
+
+    gitignor
+
+[33mcommit 9ec1a343b3053169c144e99e601f618abef0a3a1[m
+Merge: 9ee64a3 2cc1f88
+Author: Kirill <kurumi8927@gmail.com>
+Date:   Wed Jan 1 22:32:23 2025 +0300
+
+    Разрешены конфликты и завершено слияние
+
+[33mcommit 9ee64a359524681b649725505a78b7f46c77b302[m
+Author: Kirill <kurumi8927@gmail.com>
+Date:   Wed Jan 1 22:17:37 2025 +0300
+
+    хуй  знает
+
+[33mcommit 2cc1f88b6a7dd4dcf5f529e47010ad605ff2532a[m
+Author: Ксения <vlncceeks@gmail.com>
+Date:   Tue Dec 31 00:53:15 2024 +0300
+
+    добавила мероприятия
+
+[33mcommit 3e8058bd32eef36d92599568d7d9cce4cd2e48b1[m
+Author: Ксения <vlncceeks@gmail.com>
+Date:   Sun Dec 29 12:50:15 2024 +0300
+
+    небольшие правки css
+
+[33mcommit ae40c39496af9ebb8bcb2ea3a4cab3e9a0033e62[m
+Author: Kirill <kurumi8927@gmail.com>
+Date:   Thu Dec 26 06:04:07 2024 +0300
+
+    ГОЙДАААААААААААААААААА
+
+[33mcommit 8fc62c8b816bf50abb86ffb27504293948c98d0c[m
+Merge: 40215c5 9556ea1
+Author: Kirill <kurumi8927@gmail.com>
+Date:   Wed Dec 25 01:09:07 2024 +0300
+
+    Merge branch 'main' of https://github.com/vlncceeks/project_events
+
+[33mcommit 40215c5d66b9b02761f84a6e82eeca666d1cbb7f[m
+Author: Kirill <kurumi8927@gmail.com>
+Date:   Wed Dec 25 01:06:30 2024 +0300
+
+    сделал ебучую авторизацию
+
+[33mcommit 9556ea1b5037f9ff475dbc529d8fca7ff27e641f[m
+Author: Ксения <vlncceeks@gmail.com>
+Date:   Mon Dec 23 22:23:01 2024 +0300
+
+    сделала мобилку
+
+[33mcommit f9673abb5e95465dd76442cf5d2934149a733067[m
+Author: Ксения <vlncceeks@gmail.com>
+Date:   Fri Dec 20 22:39:15 2024 +0300
+
+    частично мобилку сделала
+
+[33mcommit 01437533589016574fa34dcd440e027a1e184812[m
+Author: Ксения <vlncceeks@gmail.com>
+Date:   Thu Dec 19 22:56:32 2024 +0300
+
+    регистрация
+
+[33mcommit dee883e2dda6931ad7c60e9cf45918cbd42d6bad[m
+Author: Kirill <kurumi8927@gmail.com>
+Date:   Thu Dec 19 17:32:33 2024 +0300
+
+    сделал папки для верстки
+
+[33mcommit e0c90ccdc3686ff992d6bc41ebaf56b161768b3f[m
+Author: Kirill <kurumi8927@gmail.com>
+Date:   Thu Dec 19 02:00:40 2024 +0300
+
+    сделал поиск мероприятий
+
+[33mcommit 2fccbe5b1f20faf0bc52f3204e784874a21c88ad[m
+Author: Kirill <kurumi8927@gmail.com>
+Date:   Wed Dec 18 22:17:50 2024 +0300
+
+    Resolve conflict by regenerating __pycache__
+
+[33mcommit 96d8e38b6c598b219206240f904394a31e0c65d4[m
+Author: Ксения <vlncceeks@gmail.com>
+Date:   Wed Dec 18 21:01:55 2024 +0300
+
+    правки html
+
+[33mcommit 35a817d41cc373d45375b53629f53e83bcce312d[m
+Author: Kirill <kurumi8927@gmail.com>
+Date:   Wed Dec 18 04:32:41 2024 +0300
+
+    сделал добавление мероприрятий со стороны админа, стилизация сбилась
+
+[33mcommit 9adc86a82fbfc4b3e8aa9d4c359c6689992ff331[m
+Author: Ксения <vlncceeks@gmail.com>
+Date:   Tue Dec 17 23:23:40 2024 +0300
+
+    только desktop сделала
+
+[33mcommit b7b21e30ed31308b4ff6ae42488897e60f7184b3[m
+Author: Ксения <vlncceeks@gmail.com>
+Date:   Tue Dec 17 17:10:43 2024 +0300
+
+    написала html
+
+[33mcommit 2fe9e2c0da3be0cc7415fcf826091b411d7be0ca[m
+Author: Kirill <kurumi8927@gmail.com>
+Date:   Tue Dec 17 02:04:16 2024 +0300
+
+    подключил джанго
+
+[33mcommit 3ce3d74bb4e5fbbd2b09886d25f3ff54eb7a9f7a[m
+Author: Kirill <kurumi8927@gmail.com>
+Date:   Sun Dec 15 21:34:39 2024 +0300
+
+    добавил 3 юзеров в таблицу(потом удалю), сделал запросы для получения данных из таблиц
+
+[33mcommit c540d320b3470ddd9b34359bea216fc18e422b2d[m
+Author: Kirill <kurumi8927@gmail.com>
+Date:   Sun Dec 15 19:23:57 2024 +0300
+
+    ещё раз
+
+[33mcommit 92a74093943740093330d47a7645b87514550929[m
+Merge: 762cb07 4651301
+Author: Kirill <kurumi8927@gmail.com>
+Date:   Sun Dec 15 19:06:44 2024 +0300
+
+    реадми файл
+
+[33mcommit 762cb074ee1ed38d64cf723be63a819bdee514d1[m
+Author: Kirill <kurumi8927@gmail.com>
+Date:   Sun Dec 15 19:03:33 2024 +0300
+
+    hjk
+
+[33mcommit 54498ea87f44e68772c0d023e37d616fa2956ae7[m
+Author: Kirill <kurumi8927@gmail.com>
+Date:   Sun Dec 15 18:44:38 2024 +0300
+
+    jkjk
+
+[33mcommit 46513017a20a7a0c501bcfc84f6ea4764aa6b8e8[m
+Author: vlncceeks <vlncceeks@gmail.com>
+Date:   Sun Dec 15 17:28:11 2024 +0300
+
+    бдэшки сделала
+
+[33mcommit 270c299c74a9975f839ee44b8bdf18fa7fe0170f[m
+Author: Ксения <vlncceeks@gmail.com>
+Date:   Sat Dec 14 21:32:40 2024 +0300
+
+    файл test
