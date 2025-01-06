@@ -1,6 +1,7 @@
 const wrapper = document.querySelector(".wrapper__activity");
 const form = document.querySelector(".search__form");
 const search = document.querySelector(".search__input");
+const modalWindow = document.querySelector(".modal");
 
 const URL_API = "http://127.0.0.1:8000/api/events/";
 
@@ -64,28 +65,38 @@ function showEvent(data) {
     const signButton = eventElement.querySelector(".content__sign_button");
     signButton.addEventListener("click", async (e) => {
       const eventId = e.target.getAttribute("data-event-id");
-
-      // Отправка запроса на регистрацию
-      const response = await fetch(`/api/register_event/${eventId}/`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-CSRFToken": getCookie("csrftoken"), // Используйте CSRF-токен, если нужно
-        },
+      openModal(eventId);
+      btn_close = document.querySelector(".modal__button");
+      btn_close.addEventListener("click", () => {
+        closeModal();
       });
-      const result = await response.json();
+      const displayClose = document.querySelector(".modal--show");
+      displayClose.addEventListener("click", (e) => {
+        if (e.target.className == "modal modal--show") {
+          closeModal();
+        }
+      });
+      // // Отправка запроса на регистрацию
+      // const response = await fetch(`/api/register_event/${eventId}/`, {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //     "X-CSRFToken": getCookie("csrftoken"), // Используйте CSRF-токен, если нужно
+      //   },
+      // });
+      // const result = await response.json();
 
-      if (response.ok) {
-        alert(result.message);
-        // Обновляем количество доступных мест на странице
-        e.target
-          .closest(".event")
-          .querySelector(
-            ".content__numbers_of_seats"
-          ).textContent = `Количество мест: ${result.available_seats}`;
-      } else {
-        alert(result.error);
-      }
+      // if (response.ok) {
+      //   alert(result.message);
+      //   // Обновляем количество доступных мест на странице
+      //   e.target
+      //     .closest(".event")
+      //     .querySelector(
+      //       ".content__numbers_of_seats"
+      //     ).textContent = `Количество мест: ${result.available_seats}`;
+      // } else {
+      //   alert(result.error);
+      // }
     });
 
     wrapper.appendChild(eventElement);
@@ -141,10 +152,24 @@ async function searchEvents() {
 }
 
 function showSearchEvents(data) {
-  // console.log("Отображаем найденные события:", data);
   wrapper.innerHTML = ""; // Очистить текущие события
   showEvent(data); // Отобразить новые события
 }
-
+// -------------------модалка--------------
+function openModal(id) {
+  modalWindow.classList.add("modal--show");
+  document.body.classList.add("stop-scroling");
+  modalWindow.innerHTML = `
+  <div class="modal__card">
+      <h2 class="modal__title">Выбрать дату и время</h2>
+      <button class="modal__button">закрыть</button>
+    </div>       
+  `;
+}
+function closeModal() {
+  modalWindow.classList.remove("modal--show");
+  document.body.classList.remove("stop-scroling");
+}
+//-------------------------------------------
 // Получить все события при загрузке страницы
 getEvents(URL_API);
