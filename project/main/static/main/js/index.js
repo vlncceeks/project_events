@@ -30,32 +30,36 @@ function showEvent(data) {
     eventElement.classList.add("activity__event", "event");
 
     eventElement.innerHTML = `
-      <div class="event__container_image">
-        <img src="${event.photo}" alt="event" class="event__image" id="image">
-      </div>
-      <div class="events__content content">
-        <details class="content__details details">
-          <summary class="details__title">${event.title}</summary>
-          <p class="details__description">${event.description}</p>
-          <p class="details__materials_title"></p>
-          <p class="details__materials">${event.materials}</p>
-        </details>
-        <p class="content__authors">${event.author}</p>
-        <p class="content__date_and_time">${event.date_time
-          .replace("T", " ")
-          .replace("Z", " ")
-          .replace("-", ".")
-          .replace("-", ".")}</p>
-        <p class="content__numbers_of_seats">Количество мест: ${
-          event.available_seats
-        }</p>
-        <button class="content__sign_button sign_button" data-event-id="${
-          event.id
-        }">
-          Записаться
-        </button>
-      </div>
-    `;
+  ${
+    event.photo
+      ? `<div class="event__container_image">
+          <img src="${event.photo}" alt="event" class="event__image" id="image">
+        </div>`
+      : ""
+  }
+  <div class="events__content content">
+    <details class="content__details details">
+      <summary class="details__title">${event.title}</summary>
+      <p class="details__description">${event.description}</p>
+      <p class="details__materials_title"></p>
+      <p class="details__materials">${event.materials}</p>
+    </details>
+    <p class="content__authors">${event.author}</p>
+    <p class="content__date_and_time">${event.date_time
+      .replace("T", " ")
+      .replace("Z", " ")
+      .replace("-", ".")
+      .replace("-", ".")}</p>
+    <p class="content__numbers_of_seats">Количество мест: ${
+      event.available_seats
+    }</p>
+    <button class="content__sign_button sign_button" data-event-id="${
+      event.id
+    }">
+      Записаться
+    </button>
+  </div>
+`;
 
     const signButton = eventElement.querySelector(".content__sign_button");
     signButton.addEventListener("click", async (e) => {
