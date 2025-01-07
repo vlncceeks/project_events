@@ -162,7 +162,7 @@ function openModal(id) {
   modalWindow.innerHTML = `
   <div class="modal__card">
       <h2 class="modal__title">Выбрать дату и время</h2>
-      <button class="modal__button">закрыть</button>
+      <button class="modal__button">Закрыть</button>
     </div>       
   `;
 }

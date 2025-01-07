@@ -53,7 +53,7 @@ main {
   letter-spacing: 0.05em;
   color: var(--text);
   padding: 0;
-  min-width: 12rem;
+  min-width: 10rem;
   width: 100%;
   font-size: 1.6rem;
   outline: none;
@@ -79,20 +79,20 @@ main {
 }
 .entry__username {
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: var(--text);
   align-self: center;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 .button_of_entry,
-.sign_button {
+.sign_button, .modal__button {
   background-color: var(--accent);
   border: 0;
   border-radius: 1rem;
   padding: 0.9rem 0.8rem;
   color: var(--text);
   font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-size: 2rem;
+  font-size: 1.6rem;
   letter-spacing: 0.05em;
   transition: 0.3s;
   text-decoration: none;
@@ -177,6 +177,13 @@ details p {
 details p {
   margin: 1rem 0;
   font-size: 1.2rem;
+  text-align: justify;
+  word-spacing: .05em;
+  letter-spacing: .02em;
+  line-height: 1.7rem;
+}
+.details p::first-letter {
+  padding-left: 1rem;
 }
 .details__materials {
   margin: 0 0 3rem 0;
@@ -194,7 +201,7 @@ details p {
 }
 .sign_button {
   margin: 2rem 0 0 0;
-  padding: 1.3rem 2.7rem;
+  padding: 1.1rem 1.3rem;
   align-self: center;
 }
 /* -----------------------модальное окно------------------------- */
@@ -217,22 +224,35 @@ details p {
 }
 
 .modal__card {
-  background-color: #ffffff;
+  background-color: var(--gray);
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
   max-width: 600px;
-  padding: 16px;
+  padding: 2rem;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
-  background-color: #1a191f;
-  color: #ffffff;
+  color: var(--text);
   display: flex;
+  gap: 2rem;
   flex-direction: column;
+  border: 0;
+  border-radius: 1rem;
 }
 .stop-scroling {
   height: 100%;
   overflow: hidden;
 }
-
+.modal__title {
+  letter-spacing: .05em;
+  font-size: 2rem;
+  font-weight: normal;
+  margin: 0;
+}
 .modal__button {
-  padding: 5px;
-  margin: 10px;
+  padding: 0.8rem 3.4rem;
+  margin: 0;
   align-self: center;
+  font-size: 2rem;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-weight: normal;
+  letter-spacing: .05em;
+  border: 0;
 }
