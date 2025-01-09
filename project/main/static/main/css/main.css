@@ -85,7 +85,8 @@ main {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 .button_of_entry,
-.sign_button, .modal__button {
+.sign_button,
+.modal__button {
   background-color: var(--accent);
   border: 0;
   border-radius: 1rem;
@@ -178,8 +179,8 @@ details p {
   margin: 1rem 0;
   font-size: 1.2rem;
   text-align: justify;
-  word-spacing: .05em;
-  letter-spacing: .02em;
+  word-spacing: 0.05em;
+  letter-spacing: 0.02em;
   line-height: 1.7rem;
 }
 .details p::first-letter {
@@ -241,7 +242,7 @@ details p {
   overflow: hidden;
 }
 .modal__title {
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
   font-size: 2rem;
   font-weight: normal;
   margin: 0;
@@ -253,6 +254,65 @@ details p {
   font-size: 2rem;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   font-weight: normal;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
   border: 0;
+}
+
+.modal__slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.modal__slides {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.modal__session {
+  flex: 0 0 100%; /* Ширина каждой сессии равна ширине контейнера */
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  background: #f5f5f5;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.modal__prev,
+.modal__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.modal__prev {
+  left: 10px;
+}
+
+.modal__next {
+  right: 10px;
+}
+
+.modal__button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.modal__status {
+  margin-top: 20px;
+  font-size: 16px;
+  text-align: center;
 }
