@@ -58,7 +58,7 @@ function showEvent(data) {
     signButton.addEventListener("click", async (e) => {
       const eventId = e.target.getAttribute("data-event-id");
       openModal(eventId);
-      const btn_close = document.querySelector(".modal__button");
+      const btn_close = document.querySelector(".modal__button_close");
       btn_close.addEventListener("click", closeModal);
 
       const displayClose = document.querySelector(".modal--show");
@@ -139,11 +139,14 @@ function openModal(eventId) {
         .map(
           (session) => `
             <div class="modal__session">
-              <p>${new Date(session.date_time).toLocaleString()}</p>
-              <p>Мест: ${session.available_seats}</p>
-              <input type="number" class="modal__people-count" min="1" max="${
-                session.available_seats
-              }" value="1">
+              <p class="modal__date_and_time">${new Date(session.date_time).toLocaleString()}</p>
+              <p class="modal__free_seats">Свободные места: ${session.available_seats}</p>
+              <div class"modal__book_seats">
+                <p class="modal__seats">Необходимо мест: </p>
+                <input type="number" class="modal__people-count" min="1" max="${
+                  session.available_seats
+                }" value="1">
+              </div>
               <button class="modal__book-button" data-session-id="${
                 session.id
               }">Бронь</button>
@@ -159,9 +162,9 @@ function openModal(eventId) {
               ${sessions}
             </div>
           </div>
-          <button class="modal__prev">←</button>
-          <button class="modal__next">→</button>
-          <button class="modal__button">Закрыть</button>
+          <button class="modal__prev"></button>
+          <button class="modal__next"></button>
+          <button class="modal__button_close"></button>
           <p class="modal__status"></p>
         </div>
       `;
@@ -212,7 +215,7 @@ function openModal(eventId) {
       });
 
       // Обработчик для кнопки закрытия
-      const closeButton = document.querySelector(".modal__button");
+      const closeButton = document.querySelector(".modal__button_close");
       closeButton.addEventListener("click", closeModal);
     })
     .catch((error) => {

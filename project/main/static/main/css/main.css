@@ -86,7 +86,7 @@ main {
 }
 .button_of_entry,
 .sign_button,
-.modal__button {
+.modal__button_close, .modal__book-button {
   background-color: var(--accent);
   border: 0;
   border-radius: 1rem;
@@ -98,12 +98,17 @@ main {
   transition: 0.3s;
   text-decoration: none;
   display: block;
+  text-align: center;
 }
 
-button:hover {
+.button_of_entry:hover,
+.sign_button:hover,
+.modal__button_close:hover, .modal__book-button:hover {
   background-color: var(--accent-hover);
 }
-button:active {
+.button_of_entry:active,
+.sign_button:active,
+.modal__button_close:active, .modal__book-button:active {
   background-color: var(--accent-active);
   color: var(--gray);
 }
@@ -225,7 +230,7 @@ details p {
 }
 
 .modal__card {
-  background-color: var(--gray);
+  background-color: var(--background);
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   max-width: 600px;
   padding: 2rem;
@@ -235,7 +240,9 @@ details p {
   gap: 2rem;
   flex-direction: column;
   border: 0;
-  border-radius: 1rem;
+  border-radius: 2rem;
+  position: relative;
+  width: 100%;
 }
 .stop-scroling {
   height: 100%;
@@ -247,15 +254,21 @@ details p {
   font-weight: normal;
   margin: 0;
 }
-.modal__button {
-  padding: 0.8rem 3.4rem;
-  margin: 0;
-  align-self: center;
+.modal__button_close {
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0 2rem  0 0.8rem;
+  background-color: inherit;
+  font-weight: 600;
   font-size: 2rem;
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-weight: normal;
-  letter-spacing: 0.05em;
-  border: 0;
+  background: url("cross.svg") no-repeat center;
+  padding: 2rem;
+}
+.modal__button_close:hover {
+  background-color: var(--gray);
 }
 
 .modal__slider {
@@ -271,20 +284,60 @@ details p {
 
 .modal__session {
   flex: 0 0 100%; /* Ширина каждой сессии равна ширине контейнера */
-  padding: 20px;
+  
   box-sizing: border-box;
   text-align: center;
-  background: #f5f5f5;
-  border-radius: 8px;
-  margin: 10px 0;
+  background-color:var(--background);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+.modal__date_and_time, .modal__seats, .modal__free_seats{
+  align-self: center;
+  font-size: 1.6rem;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+.modal__date_and_time {
+  margin: 0 0 2rem 0;
+  font-size: 2rem;
+}
+.modal__status {
+  display: none;
+}
+.modal__session div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 0 1rem 0;
+  gap: 1rem;
 }
 
+.modal__people-count {
+  background-color: inherit;
+  padding: 0.5rem;
+  width: auto;
+  border-radius: 1rem;
+  border: var(--text) 0.1rem solid;
+  font-size: 1.6rem;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;  
+  width: 5rem;
+}
+.modal__people-count:focus,  .modal__people-count:hover{
+  background-color: var(--gray);
+}
+
+.modal__book-button {
+  margin:  0 auto;
+}
 .modal__prev,
 .modal__next {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #007bff;
+  top: 45%;
+  transform: translateY(-40%);
   color: white;
   border: none;
   padding: 10px 15px;
@@ -294,21 +347,17 @@ details p {
 
 .modal__prev {
   left: 10px;
+  background: url("next.svg") no-repeat center;
+  transform: rotate(180deg);
 }
 
 .modal__next {
   right: 10px;
+  background: url("next.svg") no-repeat center;
 }
-
-.modal__button {
-  display: block;
-  margin: 20px auto 0;
-  padding: 10px 20px;
-  background: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 8px;
+.modal__prev:hover,
+.modal__next:hover {
+  background-color: none;
 }
 
 .modal__status {

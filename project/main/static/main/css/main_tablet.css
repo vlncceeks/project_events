@@ -37,10 +37,13 @@
         font-size: 2rem;
     }
     .button_of_entry,
-    .sign_button, .modal__button {
+    .sign_button, .modal__book-button {
         padding: 1.3rem;
         font-size: 2rem;
         min-height: 5rem;
+    }
+    .modal__button_close {
+        font-size: 2rem;
     }
     .sign_button {
         padding: 1.3rem 2.7rem;
@@ -81,6 +84,12 @@
         color: var(--text);
         font-family: "Trebuchet MS", Helvetica, sans-serif;
         font-size: 1.8rem;
+    }
+    .modal__date_and_time, .modal__seats, .modal__free_seats {
+        font-size: 2rem;
+    }
+    .modal__date_and_time {
+        font-size: 2.4rem;
     }
 }
 @media (min-width: 1250px) {
